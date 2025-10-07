@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureVote - Electronic Voting System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="logo">
+                    <h1>🗳️ SecureVote</h1>
+                    <span>Electronic Voting System</span>
+                </div>
+                <nav class="nav" id="mainNav">
+                    <div class="user-info" id="userInfo"></div>
+                    <button class="btn btn--outline btn--sm" id="logoutBtn" style="display: none;">Logout</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Landing Page -->
+    <main class="main" id="landingPage">
+        <div class="container">
+            <div class="hero">
+                <div class="hero__content">
+                    <h2>Secure Democratic Voting</h2>
+                    <p>Exercise your democratic right through our secure electronic voting platform.</p>
+                    <div class="hero__actions">
+                        <button class="btn btn--primary btn--lg" id="voterLoginBtn">Voter Login</button>
+                        <button class="btn btn--secondary btn--lg" id="adminLoginBtn">Admin Access</button>
+                    </div>
+                    <div class="hero__register">
+                        <p>New voter? <button class="link-btn" id="registerBtn">Register here</button></p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="features">
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Secure & Private</h3>
+                        <p>Advanced encryption ensures your vote remains private and secure.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Fast & Reliable</h3>
+                        <p>Quick voting process with instant confirmation and results.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Transparent Results</h3>
+                        <p>Real-time vote counting with transparent result generation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Voter Login Page -->
+    <section class="auth-page hidden" id="voterLoginPage">
+        <div class="container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h2>Voter Login</h2>
+                    <p>Enter your credentials to access the voting system</p>
+                </div>
+                <form id="voterLoginForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="voterEmail" class="form-label">Email Address</label>
+                        <input type="email" id="voterEmail" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="voterPassword" class="form-label">Password</label>
+                        <input type="password" id="voterPassword" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full-width">Login to Vote</button>
+                    <div class="auth-footer">
+                        <button type="button" class="link-btn" id="backToHome">Back to Home</button>
+                        <button type="button" class="link-btn" id="goToRegister">New voter? Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Voter Registration Page -->
+    <section class="auth-page hidden" id="voterRegisterPage">
+        <div class="container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h2>Voter Registration</h2>
+                    <p>Register to participate in the electronic voting process</p>
+                </div>
+                <form id="voterRegisterForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="regVoterID" class="form-label">Voter ID</label>
+                        <input type="text" id="regVoterID" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regName" class="form-label">Full Name</label>
+                        <input type="text" id="regName" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regEmail" class="form-label">Email Address</label>
+                        <input type="email" id="regEmail" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regPassword" class="form-label">Password</label>
+                        <input type="password" id="regPassword" class="form-control" required minlength="6">
+                    </div>
+                    <div class="form-group">
+                        <label for="regConfirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" id="regConfirmPassword" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full-width">Register</button>
+                    <div class="auth-footer">
+                        <button type="button" class="link-btn" id="backToHome2">Back to Home</button>
+                        <button type="button" class="link-btn" id="goToLogin">Already registered? Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Login Page -->
+    <section class="auth-page hidden" id="adminLoginPage">
+        <div class="container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h2>Administrator Access</h2>
+                    <p>Authorized personnel only</p>
+                </div>
+                <form id="adminLoginForm" class="auth-form">
+                    <div class="form-group">
+                        <label for="adminUsername" class="form-label">Username</label>
+                        <input type="text" id="adminUsername" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="adminPassword" class="form-label">Password</label>
+                        <input type="password" id="adminPassword" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full-width">Admin Login</button>
+                    <div class="auth-footer">
+                        <button type="button" class="link-btn" id="backToHome3">Back to Home</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Voter Dashboard -->
+    <section class="dashboard hidden" id="voterDashboard">
+        <div class="container">
+            <div class="dashboard-header">
+                <h2>Voting Dashboard</h2>
+                <div id="votingStatus" class="status-indicator"></div>
+            </div>
+            
+            <div id="candidatesContainer" class="candidates-grid">
+                <!-- Candidates will be loaded here -->
+            </div>
+            
+            <div id="voteConfirmation" class="confirmation-card hidden">
+                <h3>Vote Confirmation</h3>
+                <p>You have successfully cast your vote for:</p>
+                <div id="votedCandidate" class="voted-candidate"></div>
+                <p class="confirmation-time">Vote cast at: <span id="voteTime"></span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admin Dashboard -->
+    <section class="dashboard hidden" id="adminDashboard">
+        <div class="container">
+            <div class="admin-header">
+                <h2>Administration Dashboard</h2>
+                <div class="admin-stats" id="adminStats">
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalVoters">0</div>
+                        <div class="stat-label">Total Voters</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="votesCount">0</div>
+                        <div class="stat-label">Votes Cast</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="pendingApprovals">0</div>
+                        <div class="stat-label">Pending Approvals</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="admin-tabs">
+                <button class="tab-btn active" data-tab="candidates">Manage Candidates</button>
+                <button class="tab-btn" data-tab="voters">Manage Voters</button>
+                <button class="tab-btn" data-tab="results">Live Results</button>
+            </div>
+
+            <!-- Candidates Management Tab -->
+            <div class="tab-content active" id="candidatesTab">
+                <div class="tab-header">
+                    <h3>Manage Candidates</h3>
+                    <button class="btn btn--primary" id="addCandidateBtn">Add Candidate</button>
+                </div>
+                <div id="candidatesManagement" class="management-grid">
+                    <!-- Candidates management will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Voters Management Tab -->
+            <div class="tab-content" id="votersTab">
+                <div class="tab-header">
+                    <h3>Manage Voters</h3>
+                </div>
+                <div id="votersManagement" class="management-table">
+                    <!-- Voters management will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Results Tab -->
+            <div class="tab-content" id="resultsTab">
+                <div class="tab-header">
+                    <h3>Live Election Results</h3>
+                    <button class="btn btn--primary" id="declareResultsBtn">Declare Final Results</button>
+                </div>
+                <div id="resultsContainer" class="results-container">
+                    <!-- Results will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vote Confirmation Modal -->
+    <div id="voteModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Confirm Your Vote</h3>
+            </div>
+            <div class="modal-body">
+                <p>You are about to vote for:</p>
+                <div id="modalCandidateInfo" class="modal-candidate"></div>
+                <p><strong>Warning:</strong> You can only vote once. This action cannot be undone.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn--outline" id="cancelVote">Cancel</button>
+                <button class="btn btn--primary" id="confirmVote">Confirm Vote</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Candidate Modal -->
+    <div id="candidateModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="candidateModalTitle">Add Candidate</h3>
+            </div>
+            <div class="modal-body">
+                <form id="candidateForm">
+                    <div class="form-group">
+                        <label for="candidateName" class="form-label">Candidate Name</label>
+                        <input type="text" id="candidateName" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="candidateParty" class="form-label">Party</label>
+                        <input type="text" id="candidateParty" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="candidateSymbol" class="form-label">Symbol</label>
+                        <select id="candidateSymbol" class="form-control" required>
+                            <option value="">Select Symbol</option>
+                            <option value="🐴">🐴 Horse</option>
+                            <option value="🐘">🐘 Elephant</option>
+                            <option value="⭐">⭐ Star</option>
+                            <option value="🌊">🌊 Wave</option>
+                            <option value="🔥">🔥 Fire</option>
+                            <option value="🌳">🌳 Tree</option>
+                            <option value="⚡">⚡ Lightning</option>
+                            <option value="🎯">🎯 Target</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn--outline" id="cancelCandidate">Cancel</button>
+                <button class="btn btn--primary" id="saveCandidate">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Alert Messages -->
+    <div id="alertContainer"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
